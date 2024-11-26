@@ -1,6 +1,6 @@
 // Phần xử lý thanh toán
 document.getElementById('product1').addEventListener('click', () => submitForm(5000, 'Sản phẩm 1'));
-document.getElementById('product2').addEventListener('click', () => submitForm(20000, 'Sản phẩm 2'));
+document.getElementById('product2').addEventListener('click', () => submitForm(10000, 'Sản phẩm 2'));
 
 async function submitForm(amount, description) {
     const response = await fetch('/create_payment_link', {

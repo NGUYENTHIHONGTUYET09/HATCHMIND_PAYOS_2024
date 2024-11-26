@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán Thành Công</title>
+    <style>
+        /* Cài đặt chung */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Nền tối */
+            color: #e0e0e0; /* Chữ sáng */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Toàn bộ chiều cao màn hình */
+            text-align: center;
+        }
+
+        /* Khung chính */
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #1e1e1e; /* Nền của khung */
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Bóng khung */
+        }
+
+        /* Tiêu đề */
+        h1 {
+            color: #ffb6c1; /* Màu nhấn */
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* Nội dung mô tả */
+        p {
+            font-size: 18px;
+            color: #e0e0e0; /* Chữ màu sáng */
+            margin-bottom: 20px;
+        }
+
+        /* Nút tải tài liệu */
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            color: #121212; /* Chữ đen */
+            background-color: #ffb6c1; /* Màu hồng nhạt */
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .download-btn:hover {
+            background-color: #e09eae; /* Hồng đậm hơn khi hover */
+            transform: scale(1.05); /* Tăng nhẹ kích thước */
+        }
+
+        /* Khu vực mã Zoom */
+        .zoom-code-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #292929; /* Nền xám đậm */
+            border-radius: 10px;
+        }
+
+        /* Tiêu đề mã Zoom */
+        .zoom-code-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+
+        /* Mã Zoom */
+        .zoom-code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffb6c1; /* Màu hồng nhấn */
+            margin-bottom: 15px;
+        }
+
+        /* Nút sao chép mã */
+        .copy-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #121212; /* Chữ đen */
+            background-color: #ffb6c1; /* Nút màu hồng nhạt */
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background-color: #e09eae; /* Hồng đậm hơn khi hover */
+            transform: scale(1.05); /* Tăng nhẹ kích thước */
+        }
+
+        /* Nút quay lại */
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            color: #121212; /* Chữ đen */
+            background-color: #ffb6c1; /* Màu hồng nhạt */
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #e09eae; /* Hồng đậm hơn khi hover */
+            transform: scale(1.05); /* Tăng nhẹ kích thước */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Thanh toán khoá trị liệu nhóm thành công!</h1>
+    <p>Cảm ơn bạn đã đăng ký khóa trị liệu. Tài liệu và thông tin tham gia đã sẵn sàng.</p>
+    
+    <!-- Nút tải tài liệu -->
+    <a href="https://drive.google.com/file/d/1lDZH-Md0180rBUuc5FvK_FZ39Fz89akT/view?usp=sharing" class="download-btn">Tải Tài Liệu</a>
+
+    <!-- Mã Zoom -->
+    <div class="zoom-code-container">
+        <p class="zoom-code-title">Mã Zoom của bạn:</p>
+        <p class="zoom-code">123-456-789</p>
+        <button class="copy-btn" onclick="copyToClipboard()">Sao chép mã</button>
+    </div>
+
+    <!-- Nút quay lại trang thanh toán -->
+    <button class="back-btn" onclick="goToPaymentPage()">Quay lại trang thanh toán</button>
+    
+
+</div>
+
+<script>
+    function copyToClipboard() {
+        const zoomCode = "123-456-789"; // Mã Zoom
+        const tempInput = document.createElement("input");
+        tempInput.value = zoomCode;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Mã Zoom đã được sao chép: " + zoomCode);
+    }
+
+    function goToPaymentPage() {
+        // Thay 'duong-dan-trang-thanh-toan' bằng URL của trang thanh toán
+        window.location.href = "checkout.html";
+    }
+</script>
+
+</body>
+</html>

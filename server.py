@@ -23,9 +23,9 @@ def create_payment():
 
         # Tùy chỉnh returnUrl dựa trên giá trị sản phẩm
         if amount == 5000:
-            return_url = f"{domain}/success_10000.html"
-        elif amount == 20000:
-            return_url = f"{domain}/success_20000.html"
+            return_url = f"{domain}/success_nhom.html"
+        elif amount == 10000:
+            return_url = f"{domain}/success_canhan.html"
         else:
             return jsonify(error="Invalid amount"), 400
 

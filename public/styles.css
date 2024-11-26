@@ -1,15 +1,17 @@
 header {
     background-color: #1f1f1f;
     color: #ffffff;
-    width: 2000px;  /* Chiều rộng cố định của nút */
-    height: 70px;
+    padding: 10px 20px; /* Thêm khoảng cách bên trong */
+    width: 100%;
+    height: 80px;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    display: flex; /* Sử dụng Flexbox */
-    justify-content: space-between; /* Giãn đều các mục */
-    align-items: center; /* Căn giữa theo chiều dọc */
+    display: flex;             /* Kích hoạt Flexbox */
+    justify-content: space-between; /* Giãn đều các phần tử */
+    align-items: center;       /* Căn giữa theo chiều dọc */
+    margin: 5px; 
 }
 
 header h1 {
@@ -21,12 +23,12 @@ header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Sắp xếp theo hàng ngang */
-    gap: 1rem; /* Khoảng cách giữa các menu */
+    display: flex;             /* Sắp xếp menu theo hàng ngang */
+    gap: 1.5rem;               /* Khoảng cách giữa các menu */
 }
 
 header nav ul li {
-    margin: 0; /* Loại bỏ margin mặc định */
+    margin: 0;                 /* Loại bỏ margin mặc định */
 }
 
 header nav ul li a {
@@ -44,16 +46,18 @@ header nav ul li a:hover {
     background-color: #ffb6c1;
     color: #ffffff;
     border: none;
-    width: 110px;  /* Chiều rộng cố định của nút */
-    height: 40px;    cursor: pointer;
+    width: 130px;               /* Chiều rộng cố định của nút */
+    height: 40px;
+    cursor: pointer;
     font-size: 1rem;
-    border-radius: 5px; /* Bo góc nhẹ */
+    border-radius: 5px;         /* Bo góc nhẹ */
     transition: background-color 0.3s ease;
 }
 
 .login-btn:hover {
     background-color: #ff9bae; /* Màu đậm hơn khi hover */
 }
+
 
 
 /* Section Styling */
@@ -192,12 +196,12 @@ body {
 
 .price-strike {
     text-decoration: line-through;
-    color: #777;
+    color: #ffb6c1;
 }
 
 hr {
     border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid ffb6c1(255, 255, 255, 0.2);
     margin: 20px 0;
 }
 
@@ -316,7 +320,7 @@ button:hover {
 }
 
 a {
-    color: #007BFF;
+    color: #275424;
     text-decoration: none;
 }
 
@@ -326,23 +330,30 @@ a {
     text-align: center; /* Căn giữa tiêu đề */
 }
 
+/* Khung feedback */
 .testimonials-container {
     display: flex; /* Sử dụng Flexbox để sắp xếp các khung */
     justify-content: center; /* Căn giữa các khung trong container */
     gap: 0.5rem; /* Thu nhỏ khoảng cách giữa các khung */
     flex-wrap: wrap; /* Cho phép xuống dòng nếu không đủ không gian */
     margin-top: 1rem;
-    padding: 1rem; /* Thêm khoảng cách cho container để đẹp hơn */
 }
 
 .testimonial {
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    background-color: #93c9cf83;
-    width: 280px; /* Giảm chiều rộng khung để dễ căn chỉnh */
+    background-color: #383838; /* Màu nền mặc định */
+    border-radius: 10px; /* Bo góc */
     padding: 1rem;
-    text-align: left; /* Căn lề trái cho nội dung */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 280px; /* Chiều rộng cố định */
+    height: 150px; /* Chiều cao cố định */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng mặc định */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Hiệu ứng mượt */
+}
+
+/* Hiệu ứng khi di chuột */
+.testimonial:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Tăng độ đổ bóng */
+    transform: scale(1.05); /* Phóng to nhẹ */
+    background-color: #edb8c0a8; /* Thay đổi màu nền */
 }
 
 
@@ -376,10 +387,12 @@ a {
     font-size: 0.9rem;
 }
 
+
+
 .package-container .badge {
     font-weight: bold;
     font-size: 1.2rem;
-    color: #ffffff;
+    color: #090000;
     background-color: #ffb6c1;
     padding: 0.5rem 1rem;
     display: inline-block;
@@ -399,17 +412,19 @@ a {
 }
 
 button {
-    background-color: #1fa323;
-    color: #fff;
+    background-color: #ffb6c1;
+    color: #000;
     border: none;
-    width: 200px;  /* Chiều rộng cố định của nút */
-    height: 50px;
-    border-radius: 25px; /* Bo góc tròn hơn */
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: left; /* Đảm bảo text trong nút cũng căn trái */
+    margin-top: 10px;
+    width: 100%;
 }
 
+
 button:hover {
-    background-color: #ffb6c1;
+    background-color: #ffb6c1ce;
 }
