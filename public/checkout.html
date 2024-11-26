@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch vụ Tư vấn Tình cảm</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="checkout.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Hatchmate </h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Giới thiệu</a></li>
+                <li><a href="#pricing">Gói dịch vụ</a></li>
+                <li><a href="#testimonials">Góp ý</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="#payment">Thanh toán</a></li>
+            </ul>
+        </nav>
+        <!-- Nút đăng nhập -->
+<button id="loginButton" class="login-btn">Đăng nhập</button>
+
+<!-- Modal Đăng nhập -->
+<!-- Đăng nhập Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <button id="closeLoginModal" class="close-btn" onclick="closeLoginModal()">×</button>
+        <h2>Đăng nhập</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Tên đăng nhập" required>
+            <input type="password" id="password" placeholder="Mật khẩu" required>
+            <button type="submit">Đăng nhập</button>
+        </form>
+        <p>Chưa có tài khoản? <a href="#" id="registerLink">Đăng ký ngay</a></p>
+    </div>
+</div>
+
+<!-- Đăng ký Modal -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <button id="closeRegisterModal" class="close-btn" onclick="closeRegisterModal()">×</button>
+        <h2>Đăng ký</h2>
+        <form id="registerForm">
+            <input type="text" id="regUsername" placeholder="Tên đăng nhập" required>
+            <input type="email" id="regEmail" placeholder="Email" required>
+            <input type="password" id="regPassword" placeholder="Mật khẩu" required>
+            <button type="submit">Đăng ký</button>
+        </form>
+        <p>Đã có tài khoản? <a href="#" id="loginLink2">Đăng nhập ngay</a></p>
+    </div>
+</div>
+
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Section 1: Giới thiệu -->
+        <section id="intro" class="scroll-section">
+            <h2>Về dịch vụ của chúng tôi</h2>
+            <p>
+                Chúng tôi chuyên cung cấp dịch vụ tư vấn tình cảm giúp bạn vượt qua những thử thách trong cuộc sống.
+                Đội ngũ tư vấn viên của chúng tôi luôn sẵn sàng đồng hành cùng bạn.
+            </p>
+           
+            <img src="images/intro1.jpg" alt="Dịch vụ Tư vấn Tình cảm">
+        </section>
+
+        <section id="pricing" class="scroll-section">
+            <h2>Gói dịch vụ</h2>
+            <div class="package-container" style="display: flex; gap: 20px; justify-content: center;">
+                <!-- Gói Trị liệu Nhóm -->
+                <div class="card">
+                    <div class="badge">
+                        <span>₫300,000/người</span>
+                    </div>
+                    <div class="content">
+                        <h2>Trị liệu</h2>
+                        <h1>Nhóm</h1>
+                        <p class="footer">
+                            Trải nghiệm trị liệu tâm lý trong nhóm, chia sẻ và học hỏi từ trải nghiệm của người khác. 
+                            <a href="#">Tìm hiểu thêm</a>.
+                        </p>
+                        <p class="price">
+                            ₫300,000 cho mỗi người<br>
+                            <span class="price-strike">₫450,000/người/buổi</span>
+                        </p>
+                        <hr>
+                        <ul>
+                            <li>Chuyên viên tâm lý dẫn dắt nhóm</li>
+                            <li>Môi trường an toàn và hỗ trợ</li>
+                            <li>Đặt lịch linh hoạt</li>
+                        </ul>
+                        <button id="product1" onclick="handleBooking('Nhóm')">Get Premium Group</button>
+                    </div>
+                </div>
+        
+                <!-- Gói Trị liệu Cá nhân -->
+                <div class="card">
+                    <div class="badge">
+                        <span>₫500,000/buổi</span>
+                    </div>
+                    <div class="content">
+                        <h2>Trị liệu</h2>
+                        <h1>Cá nhân</h1>
+                        <p class="footer">
+                            Dành riêng cho bạn, tập trung giải quyết vấn đề cá nhân một cách chuyên sâu. 
+                            <a href="#">Tìm hiểu thêm</a>.
+                        </p>
+                        <p class="price">
+                            ₫500,000 cho mỗi buổi trị liệu<br>
+                            <span class="price-strike">₫750,000/buổi</span>
+                        </p>
+                        <hr>
+                        <ul>
+                            <li>Chuyên viên tâm lý 1:1</li>
+                            <li>Hoàn toàn bảo mật</li>
+                            <li>Đặt lịch linh hoạt</li>
+                        </ul>
+                        <button id="product2" onclick="handleBooking('Cá nhân')">Get Premium Individual</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+  
+        
+
+        <!-- Section 3: Lời chứng thực -->
+        <section id="testimonials" class="scroll-section">
+            <h2>Khách hàng nói gì về các khóa trị liệu tâm lý?</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <p>"Khóa trị liệu cá nhân đã giúp tôi nhận ra những vấn đề sâu bên trong bản thân. Chỉ sau 4 buổi, tôi đã cảm thấy tự tin hơn và có hướng giải quyết rõ ràng."  
+                    <br>Khách hàng cá nhân - <strong>Nguyễn Thi Anh.</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"Nhóm trị liệu thật sự là nơi tôi tìm thấy sự đồng cảm. Những buổi chia sẻ cùng mọi người khiến tôi cảm thấy mình không còn cô đơn và nhận được nhiều lời khuyên quý giá."  
+                    <br>Khách hàng tham gia nhóm trị liệu - <strong>Nguyễn Thanh Khởi.</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"Tôi từng e ngại khi nghĩ đến việc trị liệu, nhưng sự tận tâm của chuyên gia ở đây đã khiến tôi mở lòng. Đây thật sự là một trải nghiệm ý nghĩa giúp tôi vượt qua khủng hoảng."  
+                    <br>Khách hàng tham gia cá nhân - <strong>Hoàng Nam Á.</strong></p>
+                </div>
+            </div>
+        </section>
+        
+
+        
+
+        <!-- Section 5: Liên hệ -->
+        <section id="contact" class="scroll-section">
+            <h2>Liên hệ với chúng tôi</h2>
+            <p>
+                <li> Email: chauanhkhoi@gmail.com</li>
+                <li> Email:nguyenthihongtuyet04@gmail</li>
+              
+            </p>
+            <p>Điện thoại: +84 396478995</p>
+            <p>Địa chỉ: khu phố 6, phường Linh Trung, TP Thủ Đức, TP Hồ Chí Minh</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dịch vụ Cải thiện Cảm xúc. Mọi quyền được bảo vệ.</p>
+    </footer>
+</body>
+</html>
